@@ -1,19 +1,11 @@
-/*
-  TODO: Error handling
-  *. requestAccounts failed
-  *. Sending transaction failed
-*/
-const addressUtils = TreeGraph.address;
-
-const metaCoinAddress = 'cfxtest:achmuxabbazzzud7aexun00s5gsgmvgs82agjrawww';
-const COIN_SYMBOL = 'MTC';
-
+// TreeGraph is the js-conflux-sdk handle in browser
 const confluxClient = new TreeGraph.Conflux({
   url: 'https://test.confluxrpc.com',
   logger: console,
   networkId: 1,
 });
 
+const metaCoinAddress = 'cfxtest:achmuxabbazzzud7aexun00s5gsgmvgs82agjrawww';
 const metaCoinContract = confluxClient.Contract({
   address: metaCoinAddress,
   abi: metaCoinAbi,
@@ -25,10 +17,15 @@ let currentAccount;
 $(document).ready(function() {
 
   $('#connectPortal').click(async function() {
+    // check whether portal is installed through window.conflux
     if(!window.conflux) {
       alert('Please install Conflux Portal');
       return;
     }
+    // use portal export conflux as SDK client instance's provider
+    // to use portal account's private key sign transaction
+    confluxClient.provider = window.conflux;
+
     const _accounts = await conflux.send('cfx_requestAccounts');
     if (_accounts.length == 0) {
       alert('Request accounts failed');
@@ -37,12 +34,9 @@ $(document).ready(function() {
     currentAccount = _accounts[0];
     $('#connectPortal').hide();
     $('#contractInteract').show();
-    $('#currentAccount').text(addressUtils.shortenCfxAddress(currentAccount));
+    $('#currentAccount').text(TreeGraph.address.shortenCfxAddress(currentAccount));
 
     await updateBalance();
-
-    // set portal instance as confluxClient provider
-    confluxClient.provider = conflux;
   });
 
   $('#claimMetaCoin').click(async function() {
@@ -82,7 +76,7 @@ $(document).ready(function() {
 
 async function updateBalance() {
   const balance = await metaCoinContract.balanceOf(currentAccount);
-  $('#mcBalance').text(balance + ' ' + COIN_SYMBOL);
+  $('#mcBalance').text(`${balance} MTC`);
 }
 
 async function checkReceipt(hash) {
