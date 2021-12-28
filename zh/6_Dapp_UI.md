@@ -77,7 +77,7 @@ confluxClient.provider = window.conflux;
 
 #### 请求 Fluent 账户
 
-![](../images/dapp/unconnect.png)
+<img src="../images/dapp/unconnect.png" width="500px">
 
 想要同 Dapp 进行交互，第一步需要连接钱包账户获取账户地址。该账户会用于后续的用户合约信息查询和交易发送。
 
@@ -169,7 +169,7 @@ const hash = await metaCoinContract.transfer(to, parseInt(amount)).sendTransacti
 });
 ```
 
-![](../images/dapp/metacoin.png)
+<img src="../images/dapp/metacoin.png" width="500px">
 
 ## 参考
 
