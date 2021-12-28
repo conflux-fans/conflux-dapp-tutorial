@@ -16,6 +16,8 @@ Coin 或 Token 是智能合约最典型的应用，除此之外智能合约还�
 * 通过 `Claim` 按钮领取 100 MetaCoin
 * 允许用户输入目标地址和金额，发起 MetaCoin `转账`
 
+也可以直接访问[此页面体验 MetaCoin Dapp](https://conflux-fans.github.io/conflux-dapp-tutorial/index.html)
+
 实现这个页面我们会用到以下技术：
 
 * 基本的网页技术：HTML, CSS, JS
@@ -172,6 +174,8 @@ const hash = await metaCoinContract.transfer(to, parseInt(amount)).sendTransacti
 <img src="../images/dapp/metacoin.png" width="500px">
 
 ## 参考
+
+MetaCoin Dapp 的源码位于 `/docs` 目录
 
 * [Fluent 文档](https://fluent-wallet.zendesk.com/hc/en-001/sections/4410740784411-Developer-Documentation)
 * [Portal 文档](http://conflux-portal-docs.confluxnetwork.org/docs/portal/introduction/)
