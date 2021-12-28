@@ -17,15 +17,15 @@ Conflux Portal 是一款浏览器插件钱包，可用于管理用户的 Conflux
 
 首先在浏览器打开测试网 faucet Dapp: http://faucet.confluxnetwork.org/ 此 Dapp 要求用户将钱包的网络切换为 Test Network 才能使用
 
-<img src="../images/portal/switch-network.png" width="500px"/>
+<img src="../images/fluent/switch-network.png" width="500px"/>
 
-点击右上角 connect 按钮链接钱包。点击后 Faucet 会申请连接钱包中的账户，此时会弹起一个 Portal 弹窗，用户需要选择授权的账户，并点击授权按钮。授权成功后，faucet 将会获取到账户地址。
+点击右上角 connect 按钮链接钱包。点击后 Faucet 会申请连接钱包中的账户，此时会弹起一个 Fluent 弹窗，用户需要选择授权的账户，并点击授权按钮。授权成功后，faucet 将会获取到账户地址。
 
-![](../images/faucet/connect-portal.jpeg)
+![](../images/fluent/connect.png)
 
-然后在 Faucet 页面下拉框选择要申领的 Token，这里我们可以选择 CFX，然后点击 Claim 按钮，此按钮会触发一次跟合约的交互操作，本质是发送一笔交易到合约地址，因此会再次弹起 Portal 的弹窗请求用户对交易的授权，用户确认之后交易即被签名然后发送到 Conflux 网络。
+然后在 Faucet 页面下拉框选择要申领的 Token，这里我们可以选择 CFX，然后点击 Claim 按钮，此按钮会触发一次跟合约的交互操作，本质是发送一笔交易到合约地址，因此会再次弹起 Fluent 的弹窗请求用户对交易的授权，用户确认之后交易即被签名然后发送到 Conflux 网络。
 
-<img src="../images/faucet/claim-popup.png" width="500px"/>
+<img src="../images/fluent/dapp-interact.png" width="500px"/>
 
 不出意外交易，交易会发送成功，我们可以得到交易的 hash。
 
@@ -37,7 +37,7 @@ Conflux Portal 是一款浏览器插件钱包，可用于管理用户的 Conflux
 
 等到交易执行成功，用户即可收到测试网的 CFX，通过钱包可以看到余额为 1000 CFX。
 
-<img src="../images/portal/balance-changed.png" width="500px"/>
+<img src="../images/fluent/balance-changed.png" width="500px"/>
 
 ## [ConfluxScan](https://confluxscan.io/)
 

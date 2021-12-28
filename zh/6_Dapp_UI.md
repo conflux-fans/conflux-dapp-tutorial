@@ -21,7 +21,7 @@ Coin 或 Token 是智能合约最典型的应用，除此之外智能合约还�
 * 基本的网页技术：HTML, CSS, JS
 * Bootstrap UI 框架
 * js-conflux-sdk: 用于与智能合约方法交互
-* Portal(API): 调起 Portal 窗口，发送交易
+* Fluent(API): 调起 Fluent 窗口，发送交易
 * MetaCoin 合约 `地址`和 `ABI`
 
 ### 页面初始化
@@ -56,32 +56,32 @@ const metaCoinContract = confluxClient.Contract({
 });
 ```
 
-#### 检测 Portal & 设置 client provider
+#### 检测 Fluent & 设置 client provider
 
 因为 Dapp 需要通过钱包插件发送交易，所以 Dapp 加载之后，需要检测用户的浏览器是否已经安装了钱包插件，若没有安装 Dapp 将无法使用。
 
 然后将钱包插件注入到浏览器的 `conflux` 对象设置为 confluxClient 的 provider。`conflux` 实例提供了与 Fullnode  [一样的 RPC ](https://conflux-portal-docs.confluxnetwork.org/docs/portal/API_Reference/json_rpc_api) 因此可以替换掉 SDK 内部的 RPC 方法调用模块 (provider) 并且支持使用其管理的私钥对 `cfx_sendTransaction` 方法发送的`交易`进行签名，从而实现交易的发送。
 
 ```js
-// check whether portal is installed through window.conflux
+// check whether fluent is installed through window.conflux
 if(!window.conflux) {
-  alert('Please install Conflux Portal');
+  alert('Please install Fluent wallet');
   return;
 }
-// use portal export conflux as SDK client instance's provider
-// to use portal account's private key sign transaction
+// use fluent export conflux as SDK client instance's provider
+// to use fluent account's private key sign transaction
 confluxClient.provider = window.conflux;
 ```
 
 ### 页面逻辑
 
-#### 请求 Portal 账户
+#### 请求 Fluent 账户
 
 ![](../images/dapp/unconnect.png)
 
 想要同 Dapp 进行交互，第一步需要连接钱包账户获取账户地址。该账户会用于后续的用户合约信息查询和交易发送。
 
-建议账户连接操作放到某个事件响应方法中(比如可以在 Connect Portal 按钮的点击事件回调中请求账户)，不建议在页面加载后立刻连接。
+建议账户连接操作放到某个事件响应方法中(比如可以在 Connect Wallet 按钮的点击事件回调中请求账户)，不建议在页面加载后立刻连接。
 
 ```js
 const _accounts = await conflux.send('cfx_requestAccounts');
@@ -97,13 +97,9 @@ const currentAccount = _accounts[0];
 */
 ```
 
-Dapp 请求连接 Portal 账户
+Dapp 请求连接 Fluent 账户
 
-<img src="../images/dapp/connect-1.png" width="500px">
-
-用户选择账户后，第二步确认操作
-
-<img src="../images/dapp/connect-2.png" width="500px">
+<img src="../images/fluent/connect.png" width="500px">
 
 #### 查询 MetaCoin 余额
 
@@ -142,9 +138,9 @@ conflux
   })
 ```
 
-<img src="../images/dapp/auth-tx.png" width="500px">
+<img src="../images/dapp/claim.png" width="500px">
 
-更简单的一种方式是将 Portal 提供的 `conflux` 实例，设置为 SDK `Conflux` 实例的 provider，然后可以使用 SDK 的交易发送方法来发送交易：
+更简单的一种方式是将 Fluent 提供的 `conflux` 实例，设置为 SDK `Conflux` 实例的 provider，然后可以使用 SDK 的交易发送方法来发送交易：
 
 ```js
 confluxClient.provider = window.conflux;
@@ -155,7 +151,7 @@ await confluxClient.cfx.sendTransaction({
 });
 ```
 
-同样与合约方法交互，也可以直接调用合约方法，并发送交易即可。重点是把交易的 from 设置为从 Portal 获取的当前账户。
+同样与合约方法交互，也可以直接调用合约方法，并发送交易即可。重点是把交易的 from 设置为从 Fluent 获取的当前账户。
 
 ```js
 const txHash = await metaCoinContract.faucet().sendTransaction({
@@ -177,4 +173,5 @@ const hash = await metaCoinContract.transfer(to, parseInt(amount)).sendTransacti
 
 ## 参考
 
+* [Fluent 文档](https://fluent-wallet.zendesk.com/hc/en-001/sections/4410740784411-Developer-Documentation)
 * [Portal 文档](http://conflux-portal-docs.confluxnetwork.org/docs/portal/introduction/)

@@ -86,7 +86,7 @@ Conflux 内置多个合约，用于提供重要功能，目前包含：
 
 ## 与以太坊区别
 
-
+[本篇文章](https://docs.confluxnetwork.org/crypto-notes/notes/conflux-vs-ethereum)梳理了 Conflux 与以太坊的区别
 
 ## 参考链接
 
