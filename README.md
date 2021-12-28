@@ -1,11 +1,11 @@
-# conflux-dapp-tutorial
+# Conflux Dapp Tutorial
 
 A detail tutorial of developing Dapp on Conflux
 
-## Goals
+## Entrance
 
-1. Deploy a token on Conflux testnet
-2. Write in Chinese and English
+* [中文](./zh/README.md)
+* English
 
 ## Content
 
