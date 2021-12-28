@@ -138,7 +138,7 @@ conflux
   })
 ```
 
-<img src="../images/dapp/claim.png" width="500px">
+<img src="../images/dapp/claim.png" width="1000px">
 
 更简单的一种方式是将 Fluent 提供的 `conflux` 实例，设置为 SDK `Conflux` 实例的 provider，然后可以使用 SDK 的交易发送方法来发送交易：
 
