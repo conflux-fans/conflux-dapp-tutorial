@@ -4,7 +4,7 @@
 
 ## Conflux 插件钱包
 
-Conflux Portal 是一款浏览器插件钱包，可用于管理用户的 Conflux 资产及同 Dapp 交互。Portal 的安装和使用可参看[这篇文档](https://developer.confluxnetwork.org/guides/en/how_to_use_cfx_faucet#use-confluxportal-to-create-an-account)
+[Fluent Wallet](https://fluentwallet.com/) 是一款浏览器插件钱包，可用于管理用户的 Conflux 资产及同 Dapp 交互。
 
 ## 测试网 Faucet
 

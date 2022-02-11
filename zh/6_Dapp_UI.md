@@ -177,5 +177,5 @@ const hash = await metaCoinContract.transfer(to, parseInt(amount)).sendTransacti
 
 MetaCoin Dapp 的源码位于 `/docs` 目录
 
-* [Fluent 文档](https://fluent-wallet.zendesk.com/hc/en-001/sections/4410740784411-Developer-Documentation)
+* [Fluent 文档](https://fluent-wallet.zendesk.com/hc/en-001)
 * [Portal 文档](http://conflux-portal-docs.confluxnetwork.org/docs/portal/introduction/)
