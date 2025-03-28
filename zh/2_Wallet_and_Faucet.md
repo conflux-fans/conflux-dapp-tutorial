@@ -39,7 +39,7 @@
 
 <img src="../images/fluent/balance-changed.png" width="500px"/>
 
-## [ConfluxScan](https://confluxscan.io/)
+## [ConfluxScan](https://confluxscan.org/)
 
 ConfluxScan 是一款 Conflux 的数据浏览器服务，可以用于查看网络的各种信息包括：
 

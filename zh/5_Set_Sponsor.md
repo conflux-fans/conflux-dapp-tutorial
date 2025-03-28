@@ -5,7 +5,7 @@ Conflux 网络不仅具有 TPS 高，手续费低的巨大优势，还有一个�
 
 ## 使用 Scan 的赞助服务
 
-为了扶植生态项目，优化用户的使用体验，Conflux 基金会对生态项目免费提供小额的赞助服务，任何合约可直接在 ConfluxScan 的[赞助页面](https://confluxscan.io/sponsor)申请赞助服务。
+为了扶植生态项目，优化用户的使用体验，Conflux 基金会对生态项目免费提供小额的赞助服务，任何合约可直接在 ConfluxScan 的[赞助页面](https://confluxscan.org/sponsor)申请赞助服务。
 
 ![](../images/scan/sponsor.png)
 
@@ -18,7 +18,7 @@ Conflux 网络不仅具有 TPS 高，手续费低的巨大优势，还有一个�
 
 ## 通过 Sponsor 内置合约设置大额赞助
 
-除了想基金会申请赞助，开发者或项目方也可以自行对自己的合约进行赞助，直接跟 [`SponsorWhitelistControl`](https://confluxscan.io/address/cfx:aaejuaaaaaaaaaaaaaaaaaaaaaaaaaaaaegg2r16ar?tab=contract-viewer) 内置合约交互即可，可以灵活设置赞助额度及单次赞助上限。
+除了想基金会申请赞助，开发者或项目方也可以自行对自己的合约进行赞助，直接跟 [`SponsorWhitelistControl`](https://confluxscan.org/address/cfx:aaejuaaaaaaaaaaaaaaaaaaaaaaaaaaaaegg2r16ar?tab=contract-viewer) 内置合约交互即可，可以灵活设置赞助额度及单次赞助上限。
 
 ### 赞助燃气费
 
@@ -83,7 +83,7 @@ async function setWhiteList() {
 
 ### 使用 Scan 的合约交互功能
 
-另外 Scan 上的合约如果进行了验证或注册，则可以直接使用 Scan 合约页面的读写功能与合约进行交互，目前所有[内置合约](https://confluxscan.io/contracts)都进行了验证可以直接使用。用户只需要连接钱包插件，然后选择对应的方法并设置好参数和 `value`，然后点击 write 按钮发起交易即可。
+另外 Scan 上的合约如果进行了验证或注册，则可以直接使用 Scan 合约页面的读写功能与合约进行交互，目前所有[内置合约](https://confluxscan.org/contracts)都进行了验证可以直接使用。用户只需要连接钱包插件，然后选择对应的方法并设置好参数和 `value`，然后点击 write 按钮发起交易即可。
 
 ![](../images/scan/sponsor-whitelist.png)
 
